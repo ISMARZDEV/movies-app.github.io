@@ -1,10 +1,11 @@
+import { nowPlayingAction } from "@/core/actions/movies/now-playing.action";
 import React from "react";
 import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const App = () => {
-  //   return <Redirect href="/home" />;
 
+  nowPlayingAction();
   return (
     <SafeAreaView>
       <View className="mt-6 mx-2.5 ">
