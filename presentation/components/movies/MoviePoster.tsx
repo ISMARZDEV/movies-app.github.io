@@ -5,7 +5,7 @@ interface Props {
   id: number;
   poster: string;
   smallPoster?: boolean;
-  className?: string
+  className?: string;
 }
 
 const MoviePoster = ({ id, poster, smallPoster = false, className }: Props) => {
@@ -13,10 +13,10 @@ const MoviePoster = ({ id, poster, smallPoster = false, className }: Props) => {
     <Pressable className={`active:opacity-90 px-2 ${className}`}>
       <Image
         source={{ uri: poster }}
-        className="shadow-lg rounded-2xl w-full h-full"
+        className=" rounded-2xl w-full h-full"
         style={{
-          width: smallPoster ? 85 : 150,
-          height: smallPoster ? 130 : 250,
+          width: smallPoster ? 85 : 200,
+          height: smallPoster ? 130 : 260,
         }}
         resizeMode="cover"
       />

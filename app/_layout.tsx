@@ -1,6 +1,6 @@
 import { nowPlayingAction } from "@/core/actions/movies/now-playing.action";
 import React from "react";
-import "./global.css"; // Importar estilos de NativeWind
+import "./global.css";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Stack } from "expo-router";
