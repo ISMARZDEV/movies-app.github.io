@@ -24,7 +24,6 @@ const HomeScreen = () => {
       colors={["#2C2E3B", "#1E1E2A", "#0C1422"]}
       start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 1 }}
-      className="px-4 mb-1 py-2"
     >
       <ScrollView showsVerticalScrollIndicator={false}>
         <View className="mt-2 pb-10" style={{ paddingTop: safeArea.top }}>
@@ -75,7 +74,6 @@ const HomeScreen = () => {
             loadNextPage={ topRatedQuery.fetchNextPage }
           />
           <MovieHorizontalList
-            className="mb-5"
             movies={upcomingQuery.data ?? []}
             title="Coming soon"
           />
