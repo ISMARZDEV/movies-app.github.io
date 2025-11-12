@@ -1,3 +1,4 @@
+
 import MainSlideshow from "@/presentation/components/movies/MainSlideshow";
 import { useMovies } from "@/presentation/hooks/useMovies";
 import { LinearGradient } from "expo-linear-gradient";
@@ -5,6 +6,7 @@ import React from "react";
 import { ActivityIndicator, Image, ScrollView, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import MovieHorizontalList from "../../presentation/components/movies/MovieHorizontalList";
+
 
 const HomeScreen = () => {
   const { nowPlayingQuery, popularQuery, topRatedQuery, upcomingQuery } =
@@ -24,9 +26,9 @@ const HomeScreen = () => {
       colors={["#2C2E3B", "#1E1E2A", "#0C1422"]}
       start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 1 }}
-      className="px-4 mb-1 py-2"
     >
       <ScrollView showsVerticalScrollIndicator={false}>
+
         <View className="mt-2 pb-10" style={{ paddingTop: safeArea.top }}>
           <View style={{ alignItems: "center" }}>
             <Image
@@ -63,19 +65,24 @@ const HomeScreen = () => {
           {/* <Text className="text-3xl text-white font-bold px-3">Movies App</Text> */}
 
           <MainSlideshow movies={nowPlayingQuery.data ?? []} />
-          <MovieHorizontalList
-            className="mb-5"
-            movies={popularQuery.data ?? []}
-            title="Popular"
-          />
+
+          <View className="row">
+            <MovieHorizontalList
+              className="mb-5"
+              movies={popularQuery.data ?? []}
+              title="Popular"
+              // icon="movieclapp"
+            />
+          </View>
           <MovieHorizontalList
             className="mb-5"
             movies={topRatedQuery.data?.pages.flat() ?? []}
             title="Best rated"
+            // icon="popcorn"
             loadNextPage={ topRatedQuery.fetchNextPage }
+            
           />
           <MovieHorizontalList
-            className="mb-5"
             movies={upcomingQuery.data ?? []}
             title="Coming soon"
           />

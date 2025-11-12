@@ -30,7 +30,7 @@ const MainSlideshow = ({ movies }: Props) => {
         mode="parallax"
         modeConfig={{
           parallaxScrollingScale: 0.9,
-          parallaxScrollingOffset: 35,
+          parallaxScrollingOffset: 75,
         }}
         defaultIndex={1}
       />
